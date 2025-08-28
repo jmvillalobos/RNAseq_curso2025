@@ -282,8 +282,11 @@ En esta sección les mostraré algunos de los gráficos con los que regularmente
 
 ```r
 #Instalando las paqueterias
-install.packages("gplots")
-install.packages("RcolorBrewer")
+install.packages(
+  c("RColorBrewer",  "ggplot2"),
+  repos = "https://cloud.r-project.org"
+)
+
 
 library("gplots")
 library("RColorBrewer")
