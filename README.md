@@ -193,5 +193,28 @@ topTags(diff_exp)
 ```
 
 
+<img width="933" height="257" alt="Captura de pantalla 2025-08-27 a la(s) 19 12 31" src="https://github.com/user-attachments/assets/ca93c736-a90b-4e03-bf10-43c816f328c3" />
+```r
+#podemos conocer cuantos genes nos esta arrojando el topTags
+
+dim(topTags(diff_exp))
+
+```
+<img width="929" height="52" alt="Captura de pantalla 2025-08-27 a la(s) 19 13 28" src="https://github.com/user-attachments/assets/048c2014-5cb2-466a-bb8e-43bf4d2e3026" />
+
+# guardar la tabla con todos los valores en un objeto de R y poder usarlo posteriormente es importante para nuestros fines.
+
+```r
+
+deTab = topTags(diff_exp, n=Inf)$table
+
+#esta tabla puede ser tratada con los comandos de selección y comparación que ya hemos visto
+
+deTab[c(15,30),]
+
+```
+
+
+
 
 
