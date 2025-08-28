@@ -234,4 +234,24 @@ row.names(deTab)[deTab$logFC > 5]  #recuerden que el FC esta dado en log2.
 deTab["YNL284C-A",]
 
 ```
+<img width="941" height="72" alt="Captura de pantalla 2025-08-27 a la(s) 19 23 56" src="https://github.com/user-attachments/assets/b3d79611-0b74-4360-94ee-64ebef162a96" />
+
+
+
+```r
+#esto nos permite entonces filtrar automáticamente por cualquier valor que predeterminemos
+#aquí se proponen valores estándar de filtrado pero esto se puede modificar
+
+deGenes = rownames(deTab)[deTab$FDR < 0.05 & abs(deTab$logFC) > 1]
+down=row.names(deTab)[deTab$logFC< -1]
+over=row.names(deTab)[deTab$logFC> 1]
+
+#para saber el número total de genes que pasan estos filtros (genes diferenciales según nuestro criterio)
+
+print(paste("total de diferenciales:", length(deGenes)))
+
+```
+
+
+
 
