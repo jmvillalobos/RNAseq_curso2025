@@ -108,3 +108,54 @@ plot(log2(counts[,c("wt_sc_1", "st_sc_1")]), col="gray") #aquí estamos comparan
 <img width="710" height="399" alt="Captura de pantalla 2025-08-27 a la(s) 19 01 05" src="https://github.com/user-attachments/assets/392edd73-60e8-4d61-8815-675a708415e6" />
 
 
+## Ejercicio
+¿Recuerdan cómo pedir específicamente algunas columnas? Ahora comenzaremos a usar funciones de edgeR, este programa nos ayudará a determinar los genes diferencialmente expresados.
+
+*Si desean conocer más acerca de este programa pueden consultar el manual desde R, usando la siguiente instrucción.
+
+edgeRUsersGuide()
+
+## Debemos darle formato a nuestra tabla para que edgeR pueda funcionar sobre ella.
+
+```r
+
+# esto es para declarar los grupos que usaremos en el objeto DGEList (objeto de edgeR)
+grp = sub("..$", "", colnames(counts)) 
+
+
+# vean el objeto
+grp
+# haciendo el objeto DGEList
+dge = DGEList(counts=counts, group=grp)
+dge
+```
+
+
+## An object of class "DGEList"
+## $counts
+##         wt_sc_1 wt_sc_2 wt_sc_3 st_sc_1  st_sc_2 st_sc_3 wt_sl_1 wt_sl_2
+## YPR161C    1061    1375    1321    1189 1285.000    1334    1158    1409
+## YOL138C     552     694     694     589  616.072     671    1581    1871
+## YDR395W    2691    3331    3741    3310 3281.000    3473    1403    1649
+## YGR129W     352     513     350     444  418.000     319     339     388
+## YPR165W    2862    3900    3101    3749 3763.000    3274    3377    3899
+##         wt_sl_3 st_sl_1 st_sl_2 st_sl_3
+## YPR161C    1070  1300.0  1379.0    1444
+## YOL138C    1411  1665.4  1619.2    1951
+## YDR395W    1297  1471.0  1651.0    1975
+## YGR129W     266   381.0   334.0     424
+## YPR165W    2926  3797.0  3533.0    3825
+## 5826 more rows ...
+## 
+## $samples
+##         group lib.size norm.factors
+## wt_sc_1 wt_sc  9934217            1
+## wt_sc_2 wt_sc 12547058            1
+## wt_sc_3 wt_sc 11625013            1
+## st_sc_1 st_sc 12644400            1
+## st_sc_2 st_sc 12841546            1
+## 7 more rows ...
+
+
+
+
