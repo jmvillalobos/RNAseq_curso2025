@@ -66,11 +66,10 @@ dir.create(outpath, showWarnings=FALSE)
 ```
 
 
-## aquí llamaremos a nuestra tabla de datos y la guardaremos en una variable dentro de R
+## Aquí llamaremos a nuestra tabla de datos y la guardaremos en una variable dentro de R
 
 
 ### Podemos saber cómo luce nuestra tabla cargada y que dimenciones tiene este objeto. 
-head(counts)
 
 ```r
 counts <- read.table("https://raw.githubusercontent.com/jmvillalobos/RNAseq_curso2025/main/Saccharomyces.txt",
@@ -90,7 +89,7 @@ A manera de ejemplo, aquí les presento un filtrado usando las siguientes instru
 
 counts = counts[rowSums(cpm(counts) >= 2) >=10,]
 
-# aquí vemos el uso del comando cpm y nos ayuda a tener los datos de expresión en cuentas por millón.
+# Aquí vemos el uso del comando cpm y nos ayuda a tener los datos de expresión en cuentas por millón.
 
 # despues de aplicar este filtro, nuestra tabla ha cambiado y podemos volver a evaluarla
 head(counts)
