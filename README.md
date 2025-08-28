@@ -250,7 +250,8 @@ over=row.names(deTab)[deTab$logFC> 1]
 
 print(paste("total de diferenciales:", length(deGenes)))
 
-```r
+```
+
 
 
 <img width="938" height="248" alt="Captura de pantalla 2025-08-27 a la(s) 19 24 38" src="https://github.com/user-attachments/assets/a3176107-858e-413f-ad41-fd1f93ddb311" />
@@ -259,7 +260,17 @@ print(paste("total de diferenciales:", length(deGenes)))
 
 ```r
 plotSmear(dge, de.tags=deGenes, ylab = "WT-sc vs WT-sl")
-```r
+```
 
 <img width="686" height="423" alt="Captura de pantalla 2025-08-27 a la(s) 19 26 32" src="https://github.com/user-attachments/assets/c8238b89-d4e8-40bc-9618-db1348c11ccb" />
 
+```r
+
+#Podemos exportar la tabla de genes diferenciales a nuestra carpeta de trabajo
+
+write.table(deTab, file=paste(outpath, "diff_gene_wt.txt", sep=""), row.names=TRUE, col.names=NA, quote=FALSE, sep="\t")
+
+#aquí exportamos solo los genes que se sobreexpresan o se reprimen.
+write.table(down, file=paste(outpath, "down.txt", sep=""), row.names=TRUE, col.names=NA, quote=FALSE, sep="\t")
+write.table(over, file=paste(outpath, "up.txt", sep=""), row.names=TRUE, col.names=NA, quote=FALSE, sep="\t")
+```
