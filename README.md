@@ -59,7 +59,7 @@ setwd("/cloud/project/RNAseq")
 
 ```r
 
-outpath = "/Users/manuelvillalobos/Documents/Curso_RNAseq2024/results/"
+outpath = "/cloud/project/RNAseq/results/"
 
 dir.create(outpath, showWarnings=FALSE)
 
