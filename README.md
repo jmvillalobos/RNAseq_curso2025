@@ -194,14 +194,16 @@ topTags(diff_exp)
 
 
 <img width="933" height="257" alt="Captura de pantalla 2025-08-27 a la(s) 19 12 31" src="https://github.com/user-attachments/assets/ca93c736-a90b-4e03-bf10-43c816f328c3" />
+
+
 ```r
 #podemos conocer cuantos genes nos esta arrojando el topTags
 
 dim(topTags(diff_exp))
 
 ```
-<img width="925" height="50" alt="Captura de pantalla 2025-08-27 a la(s) 19 19 04" src="https://github.com/user-attachments/assets/d106e809-4176-4944-97f7-ae3881dd5183" />
 
+<img width="925" height="50" alt="Captura de pantalla 2025-08-27 a la(s) 19 19 04" src="https://github.com/user-attachments/assets/d106e809-4176-4944-97f7-ae3881dd5183" />
 
 
 # guardar la tabla con todos los valores en un objeto de R y poder usarlo posteriormente es importante para nuestros fines.
