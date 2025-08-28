@@ -34,3 +34,7 @@ tabla <- read.table("https://raw.githubusercontent.com/jmvillalobos/RNAseq_curso
                     header = TRUE, sep = "\t")
 
 ```
+
+Para comenzar a trabajar con nuestros datos de expresión debemos posicionarnos en el directorio donde esta nuestra tabla de datos, para posteriormente cargar la tabla en R.
+
+Llamaremos a nuestra tabla y comenzaremos a manipularla
