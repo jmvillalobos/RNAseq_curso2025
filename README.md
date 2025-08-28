@@ -221,5 +221,12 @@ deTab[c(15,30),]
 
 <img width="933" height="86" alt="Captura de pantalla 2025-08-27 a la(s) 19 15 06" src="https://github.com/user-attachments/assets/a4be8ca8-904d-408c-8f02-423fd50c0e1f" />
 
+```r
+#podemos filtrar esta tabla por cualquier criterio matemático
+
+row.names(deTab)[deTab$logFC > 5]  #recuerden que el FC esta dado en log2.
+```
+
+<img width="937" height="123" alt="Captura de pantalla 2025-08-27 a la(s) 19 21 49" src="https://github.com/user-attachments/assets/960faedd-09a4-40ed-8386-37d75f2a8c95" />
 
 
