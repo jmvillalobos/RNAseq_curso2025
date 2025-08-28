@@ -1,4 +1,4 @@
-# RNAseq_curso2025
+# RNAseq curso 2025
 Este es el manual para el curso de genómica funcional de 2025
 <img width="700" height="700" alt="output" src="https://github.com/user-attachments/assets/bb1e9b8d-e206-4612-87bf-5d57659ed334" />
 
