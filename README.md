@@ -305,3 +305,27 @@ head(normalizados_diferenciales)
 ```
 <img width="943" height="295" alt="Captura de pantalla 2025-08-27 a la(s) 19 31 40" src="https://github.com/user-attachments/assets/5f993bc7-892c-44a8-94c9-626d11f23fb2" />
 
+
+```r
+#hagamos un HEATMAP!
+heatmap(normalizados_diferenciales)
+
+```
+
+<img width="495" height="481" alt="Captura de pantalla 2025-08-27 a la(s) 19 32 40" src="https://github.com/user-attachments/assets/a5bc9253-17cd-40fe-997d-f2654b493756" />
+
+
+# Comparación de normalizados contra no-normalizados
+
+```r
+par(mfrow=c(1,2)) 
+
+boxplot(log(counts),col=rainbow(6), main="antes de la normalización")
+boxplot(log(normalizados), col=rainbow(6), main="después de la normalización")
+
+```
+
+<img width="659" height="452" alt="Captura de pantalla 2025-08-27 a la(s) 19 33 56" src="https://github.com/user-attachments/assets/1b55170e-21fd-4b4c-859c-6488d8265c9b" />
+
+*En estos gráficos vemos algunas alarmas, dado que tenemos algunos ceros que al ser convertidos por log2, se van al infinito.*
+
