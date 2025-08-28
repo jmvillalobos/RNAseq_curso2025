@@ -206,7 +206,7 @@ dim(topTags(diff_exp))
 <img width="925" height="50" alt="Captura de pantalla 2025-08-27 a la(s) 19 19 04" src="https://github.com/user-attachments/assets/d106e809-4176-4944-97f7-ae3881dd5183" />
 
 
-# guardar la tabla con todos los valores en un objeto de R y poder usarlo posteriormente es importante para nuestros fines.
+## Guardar la tabla con todos los valores en un objeto de R y poder usarlo posteriormente es importante para nuestros fines.
 
 ```r
 
