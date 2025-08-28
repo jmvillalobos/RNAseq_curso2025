@@ -19,6 +19,10 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install("edgeR")
 BiocManager::install("limma")
 
+#necesitamos cargar edgeR y limma, para eso usamos la funsión library
+library(limma)
+library(edgeR)
+
 ```
     Bioconductor version 3.19 (BiocManager 1.30.23), R 4.4.1 (2024-06-14)
     Warning: package(s) not installed when version(s) same as or greater than current; use
