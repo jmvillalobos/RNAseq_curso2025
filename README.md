@@ -48,6 +48,9 @@ dir.create("RNAseq")
 # Podemos saber que archivos están en esta dirección usando el siguiente comando: 
 list.files()
 
+# nos vemos a otro directorio:
+setwd("/cloud/project/RNAseq")
+
 ```
 
 ```r
