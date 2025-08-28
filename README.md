@@ -132,7 +132,13 @@ dge
 
 <img width="934" height="476" alt="Captura de pantalla 2025-08-27 a la(s) 19 04 35" src="https://github.com/user-attachments/assets/8b6c549d-3bc1-45b4-ada4-97af930b599c" />
 
+```r
+#Podemos visualizar la dispersión de nuestras librerías usando el plot MDS
 
+plotMDS(dge)
+
+```
+<img width="739" height="448" alt="Captura de pantalla 2025-08-27 a la(s) 19 06 06" src="https://github.com/user-attachments/assets/30fc48fc-5fdb-4605-a1a3-8bef2d5d2acc" />
 
 
 
