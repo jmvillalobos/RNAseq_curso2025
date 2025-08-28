@@ -215,6 +215,7 @@ deTab[c(15,30),]
 ```
 
 
+<img width="933" height="86" alt="Captura de pantalla 2025-08-27 a la(s) 19 15 06" src="https://github.com/user-attachments/assets/a4be8ca8-904d-408c-8f02-423fd50c0e1f" />
 
 
 
