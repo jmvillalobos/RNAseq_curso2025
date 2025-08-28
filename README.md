@@ -29,12 +29,30 @@ library(edgeR)
     `force = TRUE` to re-install: 'edgeR'
     Old packages: 'nlme'
 
+
+    
+Para comenzar a trabajar con nuestros datos de expresión debemos posicionarnos en el directorio donde esta nuestra tabla de datos, para posteriormente cargar la tabla en R.
+
+Llamaremos a nuestra tabla y comenzaremos a manipularla
+
+
+```r
+
+# así podemos saber en que carpeta estamos:
+getwd()
+
+# en R tambien podemos crear carpetas
+dir.create("RNAseq")
+
+
+# Podemos saber que archivos están en esta dirección usando el siguiente comando: 
+list.files()
+
+```
+
 ```r
 tabla <- read.table("https://raw.githubusercontent.com/jmvillalobos/RNAseq_curso2025/main/Saccharomyces.txt",
                     header = TRUE, sep = "\t")
 
 ```
 
-Para comenzar a trabajar con nuestros datos de expresión debemos posicionarnos en el directorio donde esta nuestra tabla de datos, para posteriormente cargar la tabla en R.
-
-Llamaremos a nuestra tabla y comenzaremos a manipularla
