@@ -329,3 +329,91 @@ boxplot(log(normalizados), col=rainbow(6), main="después de la normalización")
 
 *En estos gráficos vemos algunas alarmas, dado que tenemos algunos ceros que al ser convertidos por log2, se van al infinito.*
 
+
+# Barplot de la cantidad de reads en cada librería
+
+```r
+
+barplot(apply(normalizados_diferenciales,2,sum),las=2, cex.names = 1, col = (1:6))
+
+```
+
+<img width="697" height="430" alt="Captura de pantalla 2025-08-27 a la(s) 19 36 40" src="https://github.com/user-attachments/assets/923e75bf-6628-4d3a-972d-8755b5955c07" />
+
+# Un PCA bonito de la distribución de nuestros datos
+
+```r
+
+pca <- princomp(normalizados_diferenciales[,c(1:6)])
+plot(pca$loadings, col=as.factor(colnames(normalizados_diferenciales[,c(1:6)])),  pch=19, cex=2, main="con nitrógeno")
+text(pca$loadings, as.vector(colnames(normalizados_diferenciales[,c(1:6)])), pos=3, cex=0.8)
+
+```
+
+<img width="665" height="470" alt="Captura de pantalla 2025-08-27 a la(s) 19 37 35" src="https://github.com/user-attachments/assets/acd3f5f2-afa6-4ae6-8652-a1572630dd8b" />
+
+
+```r
+pca <- princomp(normalizados_diferenciales[,c(7:12)])
+plot(pca$loadings, col=as.factor(colnames(normalizados_diferenciales[,c(7:12)])),  pch=19, cex=2, main="si nitrógeno")
+text(pca$loadings, as.vector(colnames(normalizados_diferenciales[,c(7:12)])), pos=3, cex=0.8)
+
+```
+
+<img width="709" height="452" alt="Captura de pantalla 2025-08-27 a la(s) 19 38 07" src="https://github.com/user-attachments/assets/0f54f51a-4f11-41b0-b735-6852fd8a908a" />
+
+# Hagamos unos bonitos volcano-plot, nos ayudaran a comparar los datos
+
+```r
+
+with(deTab, plot(logFC, -log10(FDR), pch=20, cex=0.8, col="black", main="WT+N vs WT-N", xlim=c(-8, 8), ylim=c(0,300)))
+text(deTab[1:20,]$logFC,-log(deTab[1:20,]$FDR,10),labels=rownames(deTab[1:20,]),cex=0.7,pos=1)
+with(subset(deTab, FDR<.01 & abs(logFC)>2), points(logFC, -log10(FDR), pch=20, cex=0.5, col="green"))
+abline(v=2,lty=2, col="blue")
+abline(v=-2,lty=2, col="blue")
+legend("bottomright","Up_regulated",cex=1)
+legend("bottomleft","Down_regulated",cex=1)
+
+```
+
+
+<img width="756" height="456" alt="Captura de pantalla 2025-08-27 a la(s) 19 39 27" src="https://github.com/user-attachments/assets/a9784b64-b328-4313-abaa-020feddcf6e5" />
+
+```r
+deTab2 = topTags(diff_exp2, n=Inf)$table
+deGenes2 = rownames(deTab2)[deTab2$FDR < 0.05 & abs(deTab2$logFC) > 1]
+
+
+with(deTab2, plot(logFC, -log10(FDR), pch=20, cex=0.8, col="black", main="ste12+N vs ste12-N", xlim=c(-10, 10), ylim=c(0,320)))
+text(deTab2[1:20,]$logFC,-log(deTab2[1:20,]$FDR,10),labels=rownames(deTab2[1:20,]),cex=0.7,pos=1)
+with(subset(deTab2, FDR<.01 & abs(logFC)>2), points(logFC, -log10(FDR), pch=20, cex=0.5, col="green"))
+abline(v=2,lty=2, col="blue")
+abline(v=-2,lty=2, col="blue")
+legend("bottomright","Up_regulated",cex=1)
+legend("bottomleft","Down_regulated",cex=1)
+```
+
+<img width="722" height="469" alt="Captura de pantalla 2025-08-27 a la(s) 19 40 24" src="https://github.com/user-attachments/assets/6791983c-2947-45ac-af5a-d01db8ca2ec5" />
+
+
+Si desean saber qué genes no se comparten entre ambas cepas en los inducidos, podemos hacer lo siguiente
+
+```r
+WTover= head(rownames(deTab), 30)
+ste12over= head(rownames(deTab2), 30)
+
+setdiff(WTover, ste12over)
+
+```
+
+<img width="930" height="53" alt="Captura de pantalla 2025-08-27 a la(s) 19 41 10" src="https://github.com/user-attachments/assets/eaddcb03-4d39-4d7a-a997-dbad70b3a3a3" />
+
+
+## Ahora veremos algunas herramientas en línea que nos pueden ayudar a darle más sentido a nuestro análisis:
+
+https://genemania.org/
+
+https://www.yeastgenome.org/cgi-bin/GO/goTermFinder.pl
+
+# Súper!!!! ya saben hacer análisis de expresión diferencial
+
