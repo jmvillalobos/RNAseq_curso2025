@@ -94,5 +94,7 @@ counts = counts[rowSums(cpm(counts) >= 2) >=10,]
 # despues de aplicar este filtro, nuestra tabla ha cambiado y podemos volver a evaluarla
 head(counts)
 
+dim(counts)
+
 ```
 
