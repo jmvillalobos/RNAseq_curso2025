@@ -104,5 +104,6 @@ dim(counts)
 ```r
 plot(log2(counts[,c("wt_sc_1", "st_sc_1")]), col="gray") #aquí estamos comparando únicamente dos librerías, ustedes puedes probar otras.
 ```
+<img width="710" height="399" alt="Captura de pantalla 2025-08-27 a la(s) 19 01 05" src="https://github.com/user-attachments/assets/392edd73-60e8-4d61-8815-675a708415e6" />
 
 
