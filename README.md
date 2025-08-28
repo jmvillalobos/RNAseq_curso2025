@@ -200,7 +200,9 @@ topTags(diff_exp)
 dim(topTags(diff_exp))
 
 ```
-<img width="929" height="52" alt="Captura de pantalla 2025-08-27 a la(s) 19 13 28" src="https://github.com/user-attachments/assets/048c2014-5cb2-466a-bb8e-43bf4d2e3026" />
+<img width="933" height="257" alt="Captura de pantalla 2025-08-27 a la(s) 19 12 31" src="https://github.com/user-attachments/assets/71d3e508-f1a3-4c93-be8d-40178e516f4e" />
+
+
 
 # guardar la tabla con todos los valores en un objeto de R y poder usarlo posteriormente es importante para nuestros fines.
 
