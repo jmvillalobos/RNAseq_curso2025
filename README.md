@@ -19,10 +19,10 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install("edgeR")
 
 ```
-## Bioconductor version 3.19 (BiocManager 1.30.23), R 4.4.1 (2024-06-14)
-## Warning: package(s) not installed when version(s) same as or greater than current; use
-##   `force = TRUE` to re-install: 'edgeR'
-## Old packages: 'nlme'
+    Bioconductor version 3.19 (BiocManager 1.30.23), R 4.4.1 (2024-06-14)
+    Warning: package(s) not installed when version(s) same as or greater than current; use
+    `force = TRUE` to re-install: 'edgeR'
+    Old packages: 'nlme'
 
 ```r
 tabla <- read.table("https://raw.githubusercontent.com/jmvillalobos/RNAseq_curso2025/main/Saccharomyces.txt",
