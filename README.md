@@ -250,10 +250,16 @@ over=row.names(deTab)[deTab$logFC> 1]
 
 print(paste("total de diferenciales:", length(deGenes)))
 
-```
+```r
 
 
 <img width="938" height="248" alt="Captura de pantalla 2025-08-27 a la(s) 19 24 38" src="https://github.com/user-attachments/assets/a3176107-858e-413f-ad41-fd1f93ddb311" />
 
+## Graficando los genes diferenciales para poder observar cómo se comportan y guardando los resultados
 
+```r
+plotSmear(dge, de.tags=deGenes, ylab = "WT-sc vs WT-sl")
+```r
+
+<img width="686" height="423" alt="Captura de pantalla 2025-08-27 a la(s) 19 26 32" src="https://github.com/user-attachments/assets/c8238b89-d4e8-40bc-9618-db1348c11ccb" />
 
