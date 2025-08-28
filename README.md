@@ -94,8 +94,15 @@ counts = counts[rowSums(cpm(counts) >= 2) >=10,]
 # despues de aplicar este filtro, nuestra tabla ha cambiado y podemos volver a evaluarla
 head(counts)
 colnames(counts)
-
 dim(counts)
 
 ```
+
+
+
+## Además teniendo los datos precargados, podemos visualizarlos en alguna gráfica como lo hemos visto antes
+```r
+plot(log2(counts[,c("wt_sc_1", "st_sc_1")]), col="gray") #aquí estamos comparando únicamente dos librerías, ustedes puedes probar otras.
+```
+
 
