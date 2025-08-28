@@ -273,4 +273,35 @@ write.table(deTab, file=paste(outpath, "diff_gene_wt.txt", sep=""), row.names=TR
 #aquí exportamos solo los genes que se sobreexpresan o se reprimen.
 write.table(down, file=paste(outpath, "down.txt", sep=""), row.names=TRUE, col.names=NA, quote=FALSE, sep="\t")
 write.table(over, file=paste(outpath, "up.txt", sep=""), row.names=TRUE, col.names=NA, quote=FALSE, sep="\t")
+
 ```
+
+
+# Gráficos de expresión diferencial
+En esta sección les mostraré algunos de los gráficos con los que regularmente se presentan los resultados de los análisis que hemos realizado. Son básicos y ustedes pueden encontrar en la red ejemplos más sofisticados, todo depende de que quieran mostrar. Las paqueterías de R que usaremos serán gplots.
+
+```r
+#Instalando las paqueterias
+install.packages("gplots")
+install.packages("RcolorBrewer")
+
+library("gplots")
+library("RColorBrewer")
+
+```
+
+# Visualizando nuestros datos de expresión diferencial en otro formato más interesante
+
+```r
+#normalizamos nuestros datos de expresión por cuentas por millón
+normalizados= cpm(counts)
+
+#extraemos la expresión de los genes diferenciales
+normalizados_diferenciales= normalizados[deGenes,]
+
+#veamos cómo se ve esta tablita
+head(normalizados_diferenciales)
+
+```
+<img width="943" height="295" alt="Captura de pantalla 2025-08-27 a la(s) 19 31 40" src="https://github.com/user-attachments/assets/5f993bc7-892c-44a8-94c9-626d11f23fb2" />
+
