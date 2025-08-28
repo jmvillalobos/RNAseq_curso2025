@@ -1,5 +1,8 @@
 # RNAseq_curso2025
 Este es el manual para el curso de genómica funcional de 2025
+<img width="1858" height="1563" alt="output" src="https://github.com/user-attachments/assets/bb1e9b8d-e206-4612-87bf-5d57659ed334" />
+
+
 
 
 ## Análisis de expresión diferencial
