@@ -53,9 +53,47 @@ setwd("/cloud/project/RNAseq")
 
 ```
 
+
+
+## Para crear un archivo donde se almacenarán los resultados del análisis:
+
 ```r
-tabla <- read.table("https://raw.githubusercontent.com/jmvillalobos/RNAseq_curso2025/main/Saccharomyces.txt",
+
+outpath = "/Users/manuelvillalobos/Documents/Curso_RNAseq2024/results/"
+
+dir.create(outpath, showWarnings=FALSE)
+
+```
+
+
+## aquí llamaremos a nuestra tabla de datos y la guardaremos en una variable dentro de R
+
+
+### Podemos saber cómo luce nuestra tabla cargada y que dimenciones tiene este objeto. 
+head(counts)
+
+```r
+counts <- read.table("https://raw.githubusercontent.com/jmvillalobos/RNAseq_curso2025/main/Saccharomyces.txt",
                     header = TRUE, sep = "\t")
+# Podemos saber cómo luce nuestra tabla cargada y qué dimensiones tiene este objeto. 
+head(counts)
+
+dim(counts)
+```
+Algo que regularmente queremos hacer al iniciar un análisis de expresión génica, es filtrar los datos por la cantidad mínima de lecturas asociadas a cada gen, a fin de no tener muchos genes con muy baja expresión y que estos nos causen ruido en el análisis.
+
+A manera de ejemplo, aquí les presento un filtrado usando las siguientes instrucciones
+
+
+```r
+# genes que tienen menos de 2 reads y en la suma de todas las filas da menos de 10 lecturas se elimnarán. 
+
+counts = counts[rowSums(cpm(counts) >= 2) >=10,]
+
+# aquí vemos el uso del comando cpm y nos ayuda a tener los datos de expresión en cuentas por millón.
+
+# despues de aplicar este filtro, nuestra tabla ha cambiado y podemos volver a evaluarla
+head(counts)
 
 ```
 
