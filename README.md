@@ -212,7 +212,7 @@ dim(topTags(diff_exp))
 
 deTab = topTags(diff_exp, n=Inf)$table
 
-#esta tabla puede ser tratada con los comandos de selección y comparación que ya hemos visto
+# esta tabla puede ser tratada con los comandos de selección y comparación que ya hemos visto
 
 deTab[c(15,30),]
 
