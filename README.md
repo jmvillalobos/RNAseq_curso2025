@@ -72,8 +72,9 @@ dir.create(outpath, showWarnings=FALSE)
 ### Podemos saber cómo luce nuestra tabla cargada y que dimenciones tiene este objeto. 
 
 ```r
+
 counts <- read.table("https://raw.githubusercontent.com/jmvillalobos/RNAseq_curso2025/main/Saccharomyces.txt",
-                    header = TRUE, sep = "\t")
+                     header = TRUE, row.names = 1, sep = "\t")
 # Podemos saber cómo luce nuestra tabla cargada y qué dimensiones tiene este objeto. 
 head(counts)
 
