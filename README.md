@@ -140,5 +140,58 @@ plotMDS(dge)
 ```
 <img width="739" height="448" alt="Captura de pantalla 2025-08-27 a la(s) 19 06 06" src="https://github.com/user-attachments/assets/30fc48fc-5fdb-4605-a1a3-8bef2d5d2acc" />
 
+## ¿Réplicas biológicas?
+Para poder hacer el análisis de expresión diferencial, es necesario normalizar nuestros datos, para esto edgeR nos permite calcular un factor de normalización.
+```r
+dgeNorm = calcNormFactors(dge)
+
+#Puedes visualizar los factores de normalización
+dgeNorm$samples
+```
+
+<img width="935" height="285" alt="Captura de pantalla 2025-08-27 a la(s) 19 08 15" src="https://github.com/user-attachments/assets/fe28e911-1514-4736-ad08-a55211c6e9ef" />
+
+## Realizando el análisis de expresión diferencial
+
+```r
+#estimaremos la dispersión entre nuestras librerías 
+dgeNorm = estimateCommonDisp(dgeNorm)
+
+#podemos visualizar este valor (si no tuvieran replicas es posible ingresar este valor manualmente, pero no es ideal)
+dgeNorm$common.dispersion
+```
+<img width="929" height="50" alt="Captura de pantalla 2025-08-27 a la(s) 19 09 01" src="https://github.com/user-attachments/assets/1a920bbc-724a-400d-a282-5bceb5926596" />
+
+## Calculando la expresión diferencial entre nuestras librerias (prueba pareada, exact-test)
+```r
+#Pueden especificar que grupo de datos desean comparar
+diff_exp = exactTest(dgeNorm, dispersion = dgeNorm$common.dispersion, pair = c("wt_sc", "wt_sl" ))
+diff_exp2 = exactTest(dgeNorm, dispersion = dgeNorm$common.dispersion, pair = c("st_sc", "st_sl" ))
+
+#ahora visualizaremos el objeto resultante de la prueba exacta de Fisher (objeto DGEExact)
+
+diff_exp
+```
+<img width="928" height="311" alt="Captura de pantalla 2025-08-27 a la(s) 19 09 53" src="https://github.com/user-attachments/assets/662c8e73-55e6-4fb0-8ad5-59833d49108c" />
+
+
+```r
+#si desean saber más sobre esta función
+?exactTest
+
+#podemos preguntar las dimenciones del objeto resultante
+dim(diff_exp)
+
+```
+
+<img width="937" height="49" alt="Captura de pantalla 2025-08-27 a la(s) 19 10 29" src="https://github.com/user-attachments/assets/b8b769da-eb88-4176-a6a0-07bd07734282" />
+
+```r
+#es deseable saber que genes tienen un mayor cambio y con que valor
+
+topTags(diff_exp)
+```
+
+
 
 
