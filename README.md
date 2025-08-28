@@ -229,4 +229,9 @@ row.names(deTab)[deTab$logFC > 5]  #recuerden que el FC esta dado en log2.
 
 <img width="937" height="123" alt="Captura de pantalla 2025-08-27 a la(s) 19 21 49" src="https://github.com/user-attachments/assets/960faedd-09a4-40ed-8386-37d75f2a8c95" />
 
+```r
+#y podemos explorar los valores 
+deTab["YNL284C-A",]
+
+```
 
