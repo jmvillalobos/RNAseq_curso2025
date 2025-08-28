@@ -17,6 +17,7 @@ if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
 BiocManager::install("edgeR")
+BiocManager::install("limma")
 
 ```
     Bioconductor version 3.19 (BiocManager 1.30.23), R 4.4.1 (2024-06-14)
